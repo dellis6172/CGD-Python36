@@ -22,3 +22,17 @@ ALIENMOVESPEED = 2
 
 
 screen = pygame.display.set_mode((WINDOWIDTH, WINDOWHEIGHT))
+
+def terminate():
+    pygame.quit()
+    sys.exit()
+
+while True:
+    keys = pygame.key.get_pressed()
+
+    if keys[pygame.K_ESCAPE]:
+        terminate()
+
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            terminate()
